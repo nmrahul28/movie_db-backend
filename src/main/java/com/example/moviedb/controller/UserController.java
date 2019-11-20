@@ -24,14 +24,22 @@ public class UserController {
     public void add(@RequestBody UserFavouriteModel user) {
         userservice.add(user);
     }
+
     @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method = RequestMethod.GET, value = "/get")
-    public List<UserFavouriteModel> getdata(@RequestParam(required = false) String email) {
+    public List<UserFavouriteModel> getdata(@RequestParam String email) {
         return userservice.getdata(email);
     }
+
     @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method = RequestMethod.GET, value = "/getmovie")
     public Optional<UserFavouriteModel> getMovie(@RequestParam String emailId, @RequestParam int movieId){
         return userservice.getMovie(emailId,movieId);
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @RequestMapping(method = RequestMethod.DELETE,value = "/deletemovie")
+    public void deleteMovie(@RequestParam String emailId,@RequestParam int movieId){
+        userservice.deleteMovie(emailId,movieId);
     }
 }

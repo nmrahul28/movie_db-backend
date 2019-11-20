@@ -18,6 +18,8 @@ public class Myjson implements Serializable {
     private int id;
     @JsonProperty("original_language")
     private String original_language;
+    @JsonProperty("original_name")
+    private String original_name;
     @JsonProperty("original_title")
     private String original_title;
     @JsonProperty("overview")

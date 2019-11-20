@@ -3,11 +3,6 @@ package com.example.moviedb.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import org.hibernate.annotations.TypeDef;
-
-import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 
 @Entity(name = "UserFavourite")
 @Table(name = "userfavourite")

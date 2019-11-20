@@ -27,4 +27,8 @@ public class UserService {
 		UserId user=new UserId(movieId,emailId);
 		return userdao.findById(user);
 	}
+	public void deleteMovie(String emailId, int movieId){
+		UserId userMovie=new UserId(movieId, emailId);
+		userdao.deleteById(userMovie);
+	}
 }
